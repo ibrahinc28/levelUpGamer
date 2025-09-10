@@ -1,9 +1,41 @@
+.logo img {
+    width: 150px;          /* Ajusta el ancho según prefieras */
+    height: auto;          /* Mantiene proporción original */
+    display: block;        /* Evita espacios debajo de la imagen */
+    margin: 0 auto;        /* Centra horizontalmente si el contenedor permite */
+    max-width: 100%;       /* Que no exceda el contenedor en pantallas pequeñas */
+}
+
+.carrito-icon img {
+    width: 50px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.icon-hover:hover img {
+    transform: scale(1.2);
+}
+
+.login-icon img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
-header {
+
+header.home-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* O center si quieres todo centrado */
+    padding: 15px 30px;
+}
+
+header.productos-header {
     background-color: #1E90FF;
     color: #000000;
     padding: 20px;
@@ -69,7 +101,7 @@ header {
     display: inline-block;
 }
 #login-section input::placeholder {
-  color: #7FFF00; 
+    color: #7FFF00; 
 }
 #login-btn {
     background-color: #39FF14; 
