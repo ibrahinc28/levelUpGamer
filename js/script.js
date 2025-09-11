@@ -23,10 +23,10 @@ const productos = [
 
 function mostrarProductos(lista) {
     const contenedor = document.getElementById('product-list');
-    contenedor.innerHTML = '';
+    contenedor.innerHTML = ''; //Limpia el contenedor
     if (lista.length === 0) {
         contenedor.innerHTML = '<p>No se encontraron productos.</p>';
-        return;
+        return; // si no hay productos muestra mensaje y no ejecuta siguiente codigo
     }
     lista.forEach(prod => {
         contenedor.innerHTML += `
@@ -35,19 +35,29 @@ function mostrarProductos(lista) {
                 <h3>${prod.nombre}</h3>
                 <p>${prod.descripcion}</p>
                 <span class="price">${prod.precio.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}</span>
-                <button class="btn-comprar" data-id="${prod.id}">Comprar</button>
+                <button class="btn-comprar" data-id="${prod.codigo}">Comprar</button>
+                <button class="btn-añadir" data-id="${prod.codigo}">Añadir al carrito</button>
             </div>
         `;
     });
 }
 
-document.getElementById('product-list').addEventListener('click', function(e) {
-    if (e.target.tagName === 'IMG') {
+document.getElementById('product-list').addEventListener('click', function(event) {
+    if (event.target.classList.contains('btn-añadir')) {
+    const id = event.target.getAttribute('data-id');
+    const producto = productos.find(p => p.codigo === id);
+    if (producto) {
+        agregarAlCarrito(producto);
+        alert(`Producto "${producto.nombre}" añadido al carrito.`);
+        }
+    }
+
+    if (event.target.tagName === 'IMG') {
         const modal = document.getElementById('modal-img');
         const modalImg = document.getElementById('modal-img-src');
         modal.style.display = "block";
-        modalImg.src = e.target.src;
-        modalImg.alt = e.target.alt || "Imagen ampliada";
+        modalImg.src = event.target.src;
+        modalImg.alt = event.target.alt || "Imagen ampliada";
     }
 });
 
@@ -70,6 +80,17 @@ document.addEventListener('click', function(event) {
     }
 });
 
+function agregarAlCarrito(producto) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const existe = carrito.find(p => p.codigo === producto.codigo);
+    if (existe) {
+    existe.cantidad = (existe.cantidad || 1) + 1;
+        } else {
+    carrito.push({ ...producto, cantidad: 1 });
+    }
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
 
 mostrarProductos(productos);
 
@@ -84,15 +105,3 @@ document.getElementById('search-btn').addEventListener('click', () => {
 });
 
 
-document.getElementById('login-btn').addEventListener('click', () => {
-    const usuario = document.getElementById('username').value;
-    const clave = document.getElementById('password').value;
-    const mensaje = document.getElementById('login-message');
-    if (usuario === "admin" && clave === "1234") {
-        mensaje.textContent = "¡Login exitoso!";
-        mensaje.style.color = "limegreen";
-    } else {
-        mensaje.textContent = "Usuario o contraseña incorrectos.";
-        mensaje.style.color = "orange";
-    }
-});

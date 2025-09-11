@@ -6,33 +6,10 @@
     max-width: 100%;       /* Que no exceda el contenedor en pantallas pequeñas */
 }
 
-.carrito-icon img {
-    width: 50px;
-    height: 30px;
-    transition: transform 0.3s;
-}
-
-.icon-hover:hover img {
-    transform: scale(1.2);
-}
-
-.login-icon img {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.3s;
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-header.home-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* O center si quieres todo centrado */
-    padding: 15px 30px;
 }
 
 header.productos-header {
@@ -45,13 +22,14 @@ header.productos-header {
 }
 .search-bar {
     margin: 20px auto;
-    max-width: 400px;
+    max-width: 500px;
     display: flex;
 }
 .search-bar input {
     flex: 1;
     padding: 8px;
-    font-size: 16px;
+    font-size: 20px;
+    width: 1000px;
     border: 1px solid #ccc;
 }
 .search-bar button {
@@ -136,7 +114,7 @@ header.productos-header {
     margin: auto;
     display: block;
     max-width: 40%;
-    max-height: 20%vh;
+    max-height: 80vh;
     width: auto;
     height: auto;   
     border-radius: 8px;
