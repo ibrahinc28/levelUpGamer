@@ -22,13 +22,21 @@
     transition: transform 0.3s;
 }
 
+.producto-icon img{
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-header.home-header {
+header {
+    background-color: #1E90FF;
+    color: #000000;
     display: flex;
     align-items: center;
     justify-content: space-between; /* O center si quieres todo centrado */
@@ -54,3 +62,86 @@ header.home-header {
     border: none;
     cursor: pointer;
 }
+
+#home-products {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#home-product-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-home-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 200px;
+    text-align: center;
+}
+
+.product-home-card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 40px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    }
+.footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+.footer-section h4 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #777;
+}
+.redes-sociales a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    margin-right: 10px;
+    filter: brightness(70%);
+}
+.redes-sociales a:hover {
+    filter: brightness(100%);
+}
+/* Usa íconos de redes sociales con fondo (puedes usar imágenes o font icons) */
+.icon-facebook { background-image: url('imagenes/facebook.svg'); }
+.icon-instagram { background-image: url('imagenes/instagram.svg'); }
+.icon-twitter { background-image: url('imagenes/twitter.svg'); }
