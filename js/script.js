@@ -1,10 +1,21 @@
 document.getElementById('search-btn').addEventListener('click', () => {
     const query = document.getElementById('search-input').value.toLowerCase();
+    if (!query) {
+        mostrarProductosHome(productosDestacados);
+        return;
+    }
     const resultados = productos.filter(prod =>
         prod.nombre.toLowerCase().includes(query) ||
         prod.descripcion.toLowerCase().includes(query)
     );
-    mostrarProductos(resultados);
+    mostrarProductosHome(resultados);
+});
+
+// Buscar al presionar Enter
+document.getElementById('search-input').addEventListener('keydown', (e) => {
+    if(e.key === 'Enter'){
+        document.getElementById('search-btn').click();
+    }
 });
 
 const productosDestacados = productos.slice(0, 4);
@@ -12,6 +23,13 @@ const productosDestacados = productos.slice(0, 4);
 function mostrarProductosHome(lista) {
     const contenedor = document.getElementById('home-product-list');
     contenedor.innerHTML = ''; // Limpia el contenedor
+
+    if(lista.length === 0){
+        contenedor.textContent = 'No se encontraron productos.';
+        return;
+    }
+
+    const fragment = document.createDocumentFragment();
 
     lista.forEach(prod => {
         const card = document.createElement('div');
@@ -42,9 +60,12 @@ function mostrarProductosHome(lista) {
         card.appendChild(precio);
         card.appendChild(boton);
 
-        // Agregar tarjeta al contenedor principal
-        contenedor.appendChild(card);
+        // Agregar tarjeta al fragmento de dom
+        fragment.appendChild(card);
     });
+
+    //agrega el fragmento al contenedor 
+    contenedor.appendChild(fragment);
 }
 
 // Ejecuta para mostrar al cargar la página
