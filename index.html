@@ -6,38 +6,18 @@
         <title>Usuario - Level-Up Gamer</title>
         <link rel="stylesheet" href="css/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <script>
-            var nombre = "placeholder"
-            var snombre = "placeholder"
-            var appaterno = "placeholder"
-            var apmaterno = "placeholder"
-            var correo = "placeholder"
-            function actualizarDatos(){
-                nombre = document.getElementById("nameId").value
-                snombre = document.getElementById("secondnameId").value
-                appaterno = document.getElementById("apellidopatId").value
-                apmaterno = document.getElementById("apellidomatId").value
-                correo = document.getElementById("correoId").value
-
-                document.getElementById("nombreUsuario").innerText=nombre+" "+snombre+" "+appaterno+" "+apmaterno
-                document.getElementById("perfilCorreo").innerText="Correo: "+correo
-
-                document.getElementById("textbox").value=""
-            }
-        </script>
     </head>
     <body>
-        <head class="container">
+        <header class="container">
             <img src="images/lvglogo.png" alt="" style="width: 75px; height: 75px;">
-            <nav aria-label="breadcrumb" style="background-color: rgb(37, 37, 37);">
+        <nav aria-label="breadcrumb" style="background-color: rgb(37, 37, 37);">
                 <ol class="breadcrumb" style="background-color: rgb(37, 37, 37);">
                     <li class="breadcrumb-item" style="color: #39FF14; font-size: 20px;"><a href="#">Inicio</a></li>
                     <li class="breadcrumb-item" style="color: #39FF14; font-size: 20px;"><a href="#">Productos</a></li>
                     <li class="breadcrumb-item" style="color: #39FF14; font-size: 20px;"><a href="#">Buscar</a></li>
                 </ol>
             </nav>
-        </head>
-
+        </header>
         <div class="container">
             <div class="row">
                 <div class="col" style="background-color: rgb(44, 44, 44); border-radius: 15px;">
@@ -149,5 +129,37 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+        <script src="js/userscript.js"></script>
     </body>
+    <footer class="footer">
+        <div class="footer-container">
+        <div class="footer-section logo-seccion">
+            <h2>VGamers</h2>
+            <p>La mejor tienda de hardware y gaming.</p>
+        </div>
+        <div class="footer-section enlaces">
+            <h4>Enlaces</h4>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Marcas</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contacto">
+            <h4>Contacto</h4>
+            <p>Teléfono: +56 9 1234 5678</p>
+            <p>Email: contacto@levelupgamer.cl</p>
+        </div>
+        <div class="footer-section redes-sociales">
+            <h4>Síguenos</h4>
+            <a href="#" aria-label="Facebook" class="icon-facebook"></a>
+            <a href="#" aria-label="Instagram" class="icon-instagram"></a>
+            <a href="#" aria-label="Twitter" class="icon-twitter"></a>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2025 LevelUpGamer. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </html>
