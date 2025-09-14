@@ -36,3 +36,15 @@ function actualizarDatos(){
         }
     }
 }
+
+function inicioAdministrador(){
+    if (
+        document.getElementById("correoInicioSesion").value == "admin@levelupgamer.cl" &&
+        document.getElementById("contrasenaInicioSesion").value == "admin123"
+    )
+    {
+        window.location.href = "modoadmin.html" // Redirecciona al modo administrador si las credenciales coinciden
+    } else {
+        window.location.href = "index.html" // Redirecciona a la página principal si no, simulando un inicio de sesión regular
+    }
+}
