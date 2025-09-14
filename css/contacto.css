@@ -29,7 +29,7 @@ header {
 }
 
 .search-bar {
-    flex-grow: 1; /* Permite que la barra de búsqueda ocupe el espacio disponible */
+    flex-grow: 1;
     margin: 0 20px;
     max-width: 600px;
     display: flex;
@@ -74,7 +74,7 @@ nav {
     transform: scale(1.2);
 }
 
-/* --- Main Content Section (Sección de contenido principal) --- */
+/* --- Estilos específicos para la página de contacto --- */
 .contact-page {
     max-width: 1200px;
     margin: 40px auto;
@@ -180,6 +180,71 @@ nav {
 .faq-item h3 {
     margin-top: 0;
     margin-bottom: 10px;
+}
+
+/* --- Estilos específicos para la página de blog (Encapsulados) --- */
+.blog-page .blog-grid-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.blog-page .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.blog-page .blog-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.blog-page .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.blog-page .blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-page .card-content {
+    padding: 15px;
+}
+
+.blog-page .blog-date {
+    display: block;
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.blog-page .blog-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.blog-page .blog-card p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+.blog-page .read-more-btn {
+    display: inline-block;
+    margin-top: 15px;
+    color: #1E90FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-page .read-more-btn:hover {
+    text-decoration: underline;
 }
 
 /* --- Footer Section (Sección del pie de página) --- */
