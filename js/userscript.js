@@ -34,6 +34,7 @@ function actualizarDatos(){
         else { 
             document.getElementById("nombreUsuario").innerText=nombre+" "+appaterno+" "+apmaterno
         }
+        document.getElementById("perfilCorreo").innerText=correo
     }
 }
 
