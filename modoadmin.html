@@ -41,13 +41,13 @@
                             Añadir producto
                         </a>
                     </p>
+
                     <div class="collapse" id="crearProducto">
                         <div class="card card-body">
-                            
                             <form class="row mt-3 g-3 needs-validation" novalidate>
                                 <div class="col-6 position-relative">
                                     <label for="codigoCrearProducto" class="form-label">Código único</label>
-                                    <input type="text" class="form-control" id="nameId" required>
+                                    <input type="text" class="form-control" id="codigoCrearProducto" required>
                                     <div class="invalid-tooltip">
                                         Debe ingresar un código
                                     </div>
@@ -55,26 +55,23 @@
 
                                 <div class="col-6 position-relative">
                                     <label for="categoriaCrearProducto" class="form-label">Categoría</label>
-                                    <input type="text" class="form-control" id="secondnameId">
+                                    <input type="text" class="form-control" id="categoriaCrearProducto" required>
+                                    <div class="invalid-tooltip">
+                                        Debe ingresar la categoría del producto
+                                    </div>
                                 </div>
 
                                 <div class="col-6 position-relative">
                                     <label for="nombreCrearProducto" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="apellidopatId" required>
-                                    <div class="valid-tooltip">
-                                        ¡Correcto!
-                                    </div>
+                                    <input type="text" class="form-control" id="nombreCrearProducto" required>
                                     <div class="invalid-tooltip">
-                                        Debe ingresar un nombre
+                                        Debe ingresar un nombre para el producto
                                     </div>
                                 </div>
 
                                 <div class="col-6 position-relative">
                                     <label for="descripcionCrearProducto" class="form-label">Descripción</label>
-                                    <input type="text" class="form-control" id="apellidomatId" required>
-                                    <div class="valid-tooltip">
-                                        ¡Correcto!
-                                    </div>
+                                    <input type="text" class="form-control" id="descripcionCrearProducto" required>
                                     <div class="invalid-tooltip">
                                         Debe ingresar una descripción
                                     </div>
@@ -82,315 +79,22 @@
 
                                 <div class="col-6 position-relative">
                                     <label for="precioCrearProducto" class="form-label">Precio</label>
-                                    <input type="text" class="form-control" id="correoId" required>
-                                    <div class="valid-tooltip">
-                                        ¡Correcto!
-                                    </div>
+                                    <input type="text" class="form-control" id="precioCrearProducto" required>
                                     <div class="invalid-tooltip">
-                                        Debe ingresar un precio
+                                        Debe ingresar un precio para el producto
                                     </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                <div class="modal-body">
-                    
-                    <p class="d-inline-flex gap-1">
-                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#editarProducto" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Editar producto
-                    </a>
-                    </p>
-                    <div class="collapse" id="editarProducto">
-                    <div class="card card-body">
-                        
-                        <form class="row mt-3 g-3 needs-validation" novalidate>
-                            <div class="col-6 position-relative">
-                                <label for="codigoEditarProducto" class="form-label">Código del producto</label>
-                                <input type="text" class="form-control" id="nameId" required>
-                                <div class="valid-tooltip">
-                                <!-- <div class="valid-feedback"> -->
-                                    ¡Correcto!
-                                </div>
-                                <div class="invalid-tooltip">
-                                    Debe ingresar un código
-                                </div>
-                            </div>
-
-                            <div class="col-6 position-relative">
-                                <label for="categoriaCrearProducto" class="form-label">Categoría</label>
-                                <input type="text" class="form-control" id="secondnameId">
-                            </div>
-
-                            <div class="col-6 position-relative">
-                                <label for="nombreCrearProducto" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="apellidopatId" required>
-                                <div class="valid-tooltip">
-                                    ¡Correcto!
-                                </div>
-                                <div class="invalid-tooltip">
-                                    Debe ingresar un nombre
-                                </div>
-                            </div>
-
-                            <div class="col-6 position-relative">
-                                <label for="descripcionCrearProducto" class="form-label">Descripción</label>
-                                <input type="text" class="form-control" id="apellidomatId" required>
-                                <div class="valid-tooltip">
-                                    ¡Correcto!
-                                </div>
-                                <div class="invalid-tooltip">
-                                    Debe ingresar una descripción
-                                </div>
-                            </div>
-
-                            <div class="col-6 position-relative">
-                                <label for="precioCrearProducto" class="form-label">Precio</label>
-                                <input type="text" class="form-control" id="correoId" required>
-                                <div class="valid-tooltip">
-                                    ¡Correcto!
-                                </div>
-                                <div class="invalid-tooltip">
-                                    Debe ingresar un precio
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" >Confirmar</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="modal-body">
-                    
-                    <p class="d-inline-flex gap-1">
-                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#eliminarProducto" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Eliminar producto
-                    </a>
-                    </p>
-                    <div class="collapse" id="eliminarProducto">
-                    <div class="card card-body">
-                        
-                        <form class="row mt-3 g-3 needs-validation" novalidate>
-                            <div class="col-6 position-relative">
-                                <label for="codigoCrearProducto" class="form-label">Código único</label>
-                                <input type="text" class="form-control" id="nameId" required>
-                                <div class="valid-tooltip">
-                                <!-- <div class="valid-feedback"> -->
-                                    ¡Correcto!
-                                </div>
-                                <div class="invalid-tooltip">
-                                    Debe ingresar un código
-                                </div>
-                            </div>
-
-                            <div class="col-6 position-relative">
-                                <label for="categoriaCrearProducto" class="form-label">Motivo de eliminación</label>
-                                <input type="text" class="form-control" id="secondnameId">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" >Guardar</button>
-                        </div>
-                    </div>
-                </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="usuariosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Usuarios</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="modal-body">
-                        <p class="d-inline-flex gap-1">
-                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#crearUsuario" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Añadir usuario
-                        </a>
-                        </p>
-                        <div class="collapse" id="crearUsuario">
-                        <div class="card card-body">
-                            
-                            <form class="row mt-3 g-3 needs-validation" novalidate>
-                                <div class="col-6 position-relative">
-                                    <label for="nameId" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nameId" required>
-                                    <div class="valid-tooltip">
-                                    <!-- <div class="valid-feedback"> -->
-                                        ¡Correcto!
-                                    </div>
-                                    <div class="invalid-tooltip">
-                                        Debe ingresar un nombre
-                                    </div>
-                                </div>
-
-                                <div class="col-6 position-relative">
-                                    <label for="passwordId" class="form-label">Contraseña</label>
-                                    <input type="text" class="form-control" id="passwordId" required>
-                                    <div class="valid-tooltip">
-                                    <!-- <div class="valid-feedback"> -->
-                                        ¡Correcto!
-                                    </div>
-                                    <div class="invalid-tooltip">
-                                        Debe ingresar una contraseña
-                                    </div>
-                                </div>
-
-                                <div class="col-6 position-relative">
-                                    <label for="nameId" class="form-label">Segundo Nombre</label>
-                                    <input type="text" class="form-control" id="secondnameId">
-                                </div>
-
-                                <div class="col-6 position-relative">
-                                    <label for="apellidoId" class="form-label">Apellido Paterno</label>
-                                    <input type="text" class="form-control" id="apellidopatId" required>
-                                    <div class="valid-tooltip">
-                                        ¡Correcto!
-                                    </div>
-                                    <div class="invalid-tooltip">
-                                        Debe ingresar un Apellido
-                                    </div>
-                                </div>
-
-                                <div class="col-6 position-relative">
-                                    <label for="apellidoId" class="form-label">Apellido Materno</label>
-                                    <input type="text" class="form-control" id="apellidomatId" required>
-                                    <div class="valid-tooltip">
-                                        ¡Correcto!
-                                    </div>
-                                    <div class="invalid-tooltip">
-                                        Debe ingresar un Apellido
-                                    </div>
-                                </div>
-
-                                <div class="col-6 position-relative">
-                                    <label for="apellidoId" class="form-label">Correo electrónico</label>
-                                    <input type="text" class="form-control" id="correoId" required>
-                                    <div class="valid-tooltip">
-                                        ¡Correcto!
-                                    </div>
-                                    <div class="invalid-tooltip">
-                                        Debe ingresar un correo
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">Añadir usuario</button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="modal-body">
-                        <p class="d-inline-flex gap-1">
-                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#deshabilitarUsuario" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Deshabilitar usuario
-                        </a>
-                        </p>
-                        <div class="collapse" id="deshabilitarUsuario">
-                        <div class="card card-body">
-                            
-                            <form class="row mt-3 g-3 needs-validation" novalidate>
-                                <div class="col-6 position-relative">
-                                    <label for="codigoCrearProducto" class="form-label">ID de usuario</label>
-                                    <input type="text" class="form-control" id="codigoCrearProducto" required>
-                                    <div class="valid-tooltip">
-                                    <!-- <div class="valid-feedback"> -->
-                                        ¡Correcto!
-                                    </div>
-                                    <div class="invalid-tooltip">
-                                        Debe ingresar una ID
-                                    </div>
-                                </div>
-
-                                <p class="d-inline-flex gap-1">
-                                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        Tiempo
-                                    </a>
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
-                                            Seleccionar
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">10 minutos</a></li>
-                                            <li><a class="dropdown-item" href="#">30 minutos</a></li>
-                                            <li><a class="dropdown-item" href="#">1 hora</a></li>
-                                            <li><a class="dropdown-item" href="#">2 hora</a></li>
-                                            <li><a class="dropdown-item" href="#">24 horas</a></li>
-                                            <li><a class="dropdown-item" href="#">24 hora</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                
-
-                                <div class="col-6 position-relative">
-                                    <label for="categoriaCrearProducto" class="form-label">Motivo de terminación</label>
-                                    <input type="text" class="form-control" id="secondnameId">
                                 </div>
 
                                 <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">Deshabilitar</button>
-                            </div>
-                            </div>
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-
-
-                    <div class="modal-body">
-                        <p class="d-inline-flex gap-1">
-                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#eliminarUsuario" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Terminar usuario
-                        </a>
-                        </p>
-                        <div class="collapse" id="eliminarUsuario">
-                        <div class="card card-body">
-                            
-                            <form class="row mt-3 g-3 needs-validation" novalidate>
-                                <div class="col-6 position-relative">
-                                    <label for="codigoCrearProducto" class="form-label">ID de usuario</label>
-                                    <input type="text" class="form-control" id="nameId" required>
-                                    <div class="valid-tooltip">
-                                    <!-- <div class="valid-feedback"> -->
-                                        ¡Correcto!
-                                    </div>
-                                    <div class="invalid-tooltip">
-                                        Debe ingresar una ID
-                                    </div>
-                                </div>
-
-                                <div class="col-6 position-relative">
-                                    <label for="categoriaCrearProducto" class="form-label">Motivo de terminación</label>
-                                    <input type="text" class="form-control" id="secondnameId">
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">Terminar</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
                 </div>
             </div>
         </div>
-
+    </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
