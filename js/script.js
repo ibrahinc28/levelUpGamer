@@ -18,7 +18,7 @@ document.getElementById('search-input').addEventListener('keydown', (e) => {
     }
 });
 
-const productosDestacados = productos.slice(0, 4);
+const productosDestacados = productos.slice(0, 5);
 
 function mostrarProductosHome(lista) {
     const contenedor = document.getElementById('home-product-list');
@@ -35,37 +35,55 @@ function mostrarProductosHome(lista) {
         const card = document.createElement('div');
         card.className = 'product-home-card';
 
+        const enlaceImagen = document.createElement('a');
+        enlaceImagen.href = `detalle.html?id=${encodeURIComponent(prod.codigo)}`;
+
         const img = document.createElement('img');
         img.src = prod.imagen;
         img.alt = prod.nombre;
+        enlaceImagen.appendChild(img);
 
-        const nombre = document.createElement('h3');
-        nombre.textContent = prod.nombre;
+        const info = document.createElement('div');
+        info.className = 'product-info';
 
-        const descripcion = document.createElement('p');
-        descripcion.textContent = prod.descripcion;
+        // Crear enlace para nombre
+        const enlaceNombre = document.createElement('a');
+        enlaceNombre.href = `detalle.html?id=${encodeURIComponent(prod.codigo)}`;
+        enlaceNombre.textContent = prod.nombre;
+        enlaceNombre.style.textDecoration = 'none';
+
+        const titulo = document.createElement('h3');
+        titulo.appendChild(enlaceNombre);
 
         const precio = document.createElement('p');
-        precio.innerHTML = `<strong>Precio:</strong> ${prod.precio.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}`;
+        precio.className = 'product-price';
+        precio.textContent = prod.precio.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' });
 
-        const boton = document.createElement('button');
-        boton.className = 'btn-añadir';
-        boton.dataset.id = prod.codigo;
-        boton.textContent = 'Añadir al carrito';
+        const btnGroup = document.createElement('div');
+        btnGroup.className = 'btn-group';
 
-        // Agregar elementos a la tarjeta
-        card.appendChild(img);
-        card.appendChild(nombre);
-        card.appendChild(descripcion);
-        card.appendChild(precio);
-        card.appendChild(boton);
+        const btnComprar = document.createElement('button');
+        btnComprar.classList.add('btn-base', 'btn-comprar');
+        btnComprar.dataset.id = prod.codigo;
+        btnComprar.textContent = 'Comprar';
 
-        // Agregar tarjeta al fragmento de dom
-        fragment.appendChild(card);
+        const btnAnadir = document.createElement('button');
+        btnAnadir.classList.add('btn-base', 'btn-añadir');
+        btnAnadir.dataset.id = prod.codigo;
+        btnAnadir.textContent = 'Añadir al carrito';
+
+        btnGroup.appendChild(btnAnadir);
+        btnGroup.appendChild(btnComprar);
+
+        info.appendChild(titulo);
+        info.appendChild(precio);
+        info.appendChild(btnGroup);
+
+        card.appendChild(enlaceImagen);
+        card.appendChild(info);
+
+        contenedor.appendChild(card);
     });
-
-    //agrega el fragmento al contenedor 
-    contenedor.appendChild(fragment);
 }
 
 // Ejecuta para mostrar al cargar la página
