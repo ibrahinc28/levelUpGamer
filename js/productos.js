@@ -11,36 +11,53 @@ function mostrarProductos(lista) {
         const card = document.createElement('div');
         card.className = 'product-card';
 
+        // Crear enlace para imagen
+        const enlaceImagen = document.createElement('a');
+        enlaceImagen.href = `detalle.html?id=${encodeURIComponent(prod.codigo)}`;
+
         const img = document.createElement('img');
         img.src = prod.imagen;
         img.alt = prod.nombre || "";
+        enlaceImagen.appendChild(img);
 
-        const nombre = document.createElement('h3');
-        nombre.textContent = prod.nombre;
+        const info = document.createElement('div');
+        info.className = 'product-info';
 
-        const descripcion = document.createElement('p');
-        descripcion.textContent = prod.descripcion;
+        // Crear enlace para nombre
+        const enlaceNombre = document.createElement('a');
+        enlaceNombre.href = `detalle.html?id=${encodeURIComponent(prod.codigo)}`;
+        enlaceNombre.textContent = prod.nombre;
+        enlaceNombre.style.textDecoration = 'none';
 
-        const precio = document.createElement('span');
-        precio.className = 'price';
+        const titulo = document.createElement('h3');
+        titulo.appendChild(enlaceNombre);
+
+        const precio = document.createElement('p');
+        precio.className = 'product-price';
         precio.textContent = prod.precio.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' });
 
+        const btnGroup = document.createElement('div');
+        btnGroup.className = 'btn-group';
+
         const btnComprar = document.createElement('button');
-        btnComprar.className = 'btn-comprar';
+        btnComprar.classList.add('btn-base', 'btn-comprar');
         btnComprar.dataset.id = prod.codigo;
         btnComprar.textContent = 'Comprar';
 
         const btnAnadir = document.createElement('button');
-        btnAnadir.className = 'btn-añadir';
+        btnAnadir.classList.add('btn-base', 'btn-añadir');
         btnAnadir.dataset.id = prod.codigo;
         btnAnadir.textContent = 'Añadir al carrito';
 
-        card.appendChild(img);
-        card.appendChild(nombre);
-        card.appendChild(descripcion);
-        card.appendChild(precio);
-        card.appendChild(btnComprar);
-        card.appendChild(btnAnadir);
+        btnGroup.appendChild(btnAnadir);
+        btnGroup.appendChild(btnComprar);
+
+        info.appendChild(titulo);
+        info.appendChild(precio);
+        info.appendChild(btnGroup);
+
+        card.appendChild(enlaceImagen);
+        card.appendChild(info);
 
         contenedor.appendChild(card);
     });
@@ -55,26 +72,6 @@ document.getElementById('product-list').addEventListener('click', function(event
         agregarAlCarrito(producto);
         alert(`Producto "${producto.nombre}" añadido al carrito.`);
         }
-    }
-
-    if (event.target.tagName === 'IMG') {
-        const modal = document.getElementById('modal-img');
-        const modalImg = document.getElementById('modal-img-src');
-        modal.style.display = "block";
-        modalImg.src = event.target.src;
-        modalImg.alt = event.target.alt || "Imagen ampliada";
-    }
-});
-
-document.getElementById('modal-close').addEventListener('click', function(){
-    document.getElementById('modal-img').style.display = "none";
-});
-
-// También cerrar modal si se hace clic fuera de la imagen
-window.addEventListener('click', function(event) {
-        const modal = document.getElementById('modal-img');
-        if (event.target === modal) {
-        modal.style.display = "none";
     }
 });
 
