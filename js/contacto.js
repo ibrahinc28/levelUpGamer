@@ -1,51 +1,63 @@
-document.getElementById('search-btn').addEventListener('click', () => {
-    const query = document.getElementById('search-input').value.toLowerCase();
-    const resultados = productos.filter(prod =>
-        prod.nombre.toLowerCase().includes(query) ||
-        prod.descripcion.toLowerCase().includes(query)
-    );
-    mostrarProductos(resultados);
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('.contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            if (validarFormulario()) {
+                alert('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.');
+                contactForm.reset();
+            }
+        });
+    }
+
+    function validarFormulario() {
+        const nombre = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensaje = document.getElementById('message').value.trim();
+        
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        let isValid = true;
+
+        clearErrors();
+
+        if (nombre === '') {
+            showError('name', 'Por favor, ingresa tu nombre.');
+            isValid = false;
+        }
+
+        if (email === '') {
+            showError('email', 'Por favor, ingresa tu correo electrónico.');
+            isValid = false;
+        } else if (!emailRegex.test(email)) {
+            showError('email', 'Por favor, ingresa un correo electrónico válido.');
+            isValid = false;
+        }
+
+        if (mensaje === '') {
+            showError('message', 'Por favor, escribe tu mensaje.');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    function showError(fieldId, message) {
+        const field = document.getElementById(fieldId);
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.textContent = message;
+        field.parentNode.insertBefore(errorDiv, field.nextSibling);
+        field.classList.add('input-error');
+    }
+    
+    function clearErrors() {
+        const errors = document.querySelectorAll('.error-message');
+        errors.forEach(err => err.remove());
+        
+        const errorInputs = document.querySelectorAll('.input-error');
+        errorInputs.forEach(input => input.classList.remove('input-error'));
+    }
 });
-
-const productosDestacados = productos.slice(0, 4);
-
-function mostrarProductosHome(lista) {
-    const contenedor = document.getElementById('home-product-list');
-    contenedor.innerHTML = ''; // Limpia el contenedor
-
-    lista.forEach(prod => {
-        const card = document.createElement('div');
-        card.className = 'product-home-card';
-
-        const img = document.createElement('img');
-        img.src = prod.imagen;
-        img.alt = prod.nombre;
-
-        const nombre = document.createElement('h3');
-        nombre.textContent = prod.nombre;
-
-        const descripcion = document.createElement('p');
-        descripcion.textContent = prod.descripcion;
-
-        const precio = document.createElement('p');
-        precio.innerHTML = `<strong>Precio:</strong> ${prod.precio.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}`;
-
-        const boton = document.createElement('button');
-        boton.className = 'btn-añadir';
-        boton.dataset.id = prod.codigo;
-        boton.textContent = 'Añadir al carrito';
-
-        // Agregar elementos a la tarjeta
-        card.appendChild(img);
-        card.appendChild(nombre);
-        card.appendChild(descripcion);
-        card.appendChild(precio);
-        card.appendChild(boton);
-
-        // Agregar tarjeta al contenedor principal
-        contenedor.appendChild(card);
-    });
-}
-
-// Ejecuta para mostrar al cargar la página
-mostrarProductosHome(productosDestacados);
