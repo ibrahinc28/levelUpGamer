@@ -1,0 +1,360 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #1E90FF;
+}
+
+header {
+    background-color: #1E90FF;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+    max-width: 600px;
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background: #39FF14;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #2ECC71;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-hover img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+}
+
+.icon-hover:hover img {
+    transform: scale(1.2);
+}
+
+.contact-page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.contact-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-form-container {
+    flex: 2;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.contact-form .submit-btn {
+    padding: 15px 30px;
+    background-color: #39FF14;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #2ECC71;
+}
+
+.contact-info-container {
+    flex: 1;
+    background-color: #1E90FF;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.contact-info-container h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.contact-info-container p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info-container .fa-solid,
+.contact-info-container .fa-brands {
+    margin-right: 10px;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+.faq-container {
+    margin-top: 40px;
+}
+
+.faq-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.blog-page .blog-grid-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.blog-page .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.blog-page .blog-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.blog-page .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.blog-page .blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-page .card-content {
+    padding: 15px;
+}
+
+.blog-page .blog-date {
+    display: block;
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.blog-page .blog-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.blog-page .blog-card p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+.blog-page .read-more-btn {
+    display: inline-block;
+    margin-top: 15px;
+    color: #1E90FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-page .read-more-btn:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 40px 20px 20px;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+.footer-section h4 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.map-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.map-container h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.testimonials-container h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.testimonial-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    flex: 1 1 45%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial-card .client-name {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    color: #1E90FF;
+}
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        flex: 1 1 100%;
+    }
+}
+
+.error-message {
+    color: #ff4d4f;
+    font-size: 0.9em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.form-group input.input-error,
+.form-group textarea.input-error {
+    border: 1px solid #ff4d4f;
+}
