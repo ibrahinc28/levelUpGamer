@@ -1,3 +1,11 @@
+.logo img {
+    width: 150px;          
+    height: auto;          
+    display: block;        
+    margin: 0 auto;        
+    max-width: 100%;       
+}
+
 body {
     font-family: 'Roboto', Arial, sans-serif;
     background-color: #f4f4f4;
@@ -13,63 +21,98 @@ h2, h3 {
 }
 
 header {
-    background-color: #1E90FF;
-    color: #000000;
+    background-color: #000000;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 30px;
-}
-
-.logo img {
-    width: 150px;
-    height: auto;
+    flex-wrap: wrap;  /* Para móviles */
 }
 
 .search-bar {
-    flex-grow: 1;
-    margin: 0 20px;
-    max-width: 600px;
+    margin: 20px auto;
+    max-width: 500px;
     display: flex;
-    border-radius: 25px;
-    overflow: hidden;
 }
-
 .search-bar input {
     flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    outline: none;
+    padding: 8px;
+    font-size: 18px;
+    border: 2px solid #39FF14;
+    background-color: #111;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
 }
-
 .search-bar button {
-    padding: 10px 20px;
-    background: #39FF14;
-    color: #000;
-    border: none;
+    background-color: #39FF14; 
+    padding: 8px 20px;
     cursor: pointer;
+    border-radius: 0 5px 5px 0;
     font-weight: bold;
-    transition: background-color 0.3s;
+    border: none;
+    color: #000;
+    transition: background-color 0.3s ease;
 }
-
 .search-bar button:hover {
-    background-color: #2ECC71;
+    background-color: #1E90FF; 
+    color: #fff;
 }
 
-nav {
+.nav-buttons {
     display: flex;
     gap: 15px;
+    justify-content:center; 
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #000000; 
 }
 
-.icon-hover img {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.3s;
+.btn-nav {
+    display: flex;
+    align-items: center;
+    background-color: #39FF14; 
+    color: #000;
+    padding: 8px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
-.icon-hover:hover img {
-    transform: scale(1.2);
+@media (max-width: 767px) {
+.nav-buttons {
+    flex-direction: column !important;
+    background-color: #222; /* color distinto para el menú desplegado */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn-nav {
+    background-color: transparent;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0;
+    border-bottom: 1px solid #444;
+}
+.btn-nav:hover {
+    background-color: #555;
+    color: #fff;
+}
+}
+
+.btn-nav:hover {
+    background-color: #1E90FF; 
+    color: #fff;
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: inline-block;
 }
 
 .contact-page {

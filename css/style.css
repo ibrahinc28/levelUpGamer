@@ -6,8 +6,6 @@
     max-width: 100%;       
 }
 
-
-
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
@@ -82,6 +80,27 @@ header {
     font-family: 'Roboto', sans-serif;
     transition: background-color 0.3s ease;
     cursor: pointer;
+}
+
+@media (max-width: 767px) {
+.nav-buttons {
+    flex-direction: column !important;
+    background-color: #222; /* color distinto para el menú desplegado */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn-nav {
+    background-color: transparent;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0;
+    border-bottom: 1px solid #444;
+}
+.btn-nav:hover {
+    background-color: #555;
+    color: #fff;
+}
 }
 
 .btn-nav:hover {
