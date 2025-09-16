@@ -182,15 +182,16 @@ header {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    min-height: 450px;
 }
 
 .product-home-card img {
-     width: 100%;         /* ocupa todo el ancho de la tarjeta */
-  height: 180px;       /* alto fijo para uniformidad */
-  object-fit: contain;   /* ajusta la imagen: recorta si necesario, no deforma */
-  border-radius: 12px; /* esquinas redondeadas */
-  margin-bottom: 15px; /* separación inferior */
-  background: #222;    /* color de fondo si la imagen es pequeña o PNG */
+    width: 100%;         /* ocupa todo el ancho de la tarjeta */
+    height: 180px;       /* alto fijo para uniformidad */
+    object-fit: contain;   /* ajusta la imagen: recorta si necesario, no deforma */
+    border-radius: 12px; /* esquinas redondeadas */
+    margin-bottom: 15px; /* separación inferior */
+    background: #222;    /* color de fondo si la imagen es pequeña o PNG */
 }
 
 @media (max-width: 600px) {
@@ -286,6 +287,13 @@ height: 120px;
     padding: 40px 20px 20px;
     font-family: 'Roboto', Arial, sans-serif;
 }
+
+footer iframe {
+    border: 2px solid #39FF14;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #1E90FF;
+}
+
 .footer-container {
     display: flex;
     justify-content: space-between;

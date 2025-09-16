@@ -18,7 +18,7 @@ document.getElementById('search-input').addEventListener('keydown', (e) => {
     }
 });
 
-const productosDestacados = productos.slice(0, 5);
+const productosDestacados = productos.slice(0, 6);
 
 function mostrarProductosHome(lista) {
     const contenedor = document.getElementById('home-product-list');
