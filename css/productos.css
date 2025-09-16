@@ -1,0 +1,288 @@
+.logo img {
+    width: 150px;          /* Ajusta el ancho según prefieras */
+    height: auto;          /* Mantiene proporción original */
+    display: block;        /* Evita espacios debajo de la imagen */
+    margin: 0 auto;        /* Centra horizontalmente si el contenedor permite */
+    max-width: 100%;       /* Que no exceda el contenedor en pantallas pequeñas */
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #000; /* fondo negro */
+    color: #fff;
+}
+
+header {
+    background-color: #000;
+    color: #39FF14;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar {
+    margin: 20px auto;
+    max-width: 500px;
+    display: flex;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 8px;
+    font-size: 18px;
+    border: 2px solid #39FF14;
+    background-color: #111;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    background-color: #39FF14; 
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-weight: bold;
+    border: none;
+    color: #000;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #1E90FF; 
+    color: #fff;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content:center; 
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #000000; 
+}
+
+.btn-nav {
+    display: flex;
+    align-items: center;
+    background-color: #39FF14; 
+    color: #000;
+    padding: 8px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-nav:hover {
+    background-color: #1E90FF; 
+    color: #fff;
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+.product-card {
+    background-color: #111;
+    border-radius: 16px;
+    box-shadow: 0 0 15px #39FF14;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; 
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #1E90FF;
+}
+.product-card img {
+  width: 100%;         /* ocupa todo el ancho de la tarjeta */
+  height: 180px;       /* alto fijo para uniformidad */
+  object-fit: contain;   /* ajusta la imagen: recorta si necesario, no deforma */
+  border-radius: 12px; /* esquinas redondeadas */
+  margin-bottom: 15px; /* separación inferior */
+  background: #222;    /* color de fondo si la imagen es pequeña o PNG */
+}
+
+@media (max-width: 600px) {
+.product-card img {
+height: 120px;
+    } 
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: #1E90FF;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.product-info p {
+    font-family: 'Roboto', sans-serif;
+    color: #ccc;
+    font-size: 0.95rem;
+    flex-grow: 1;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+.product-price {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #39FF14;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-añadir img {
+    margin-left: 10px;
+    vertical-align: middle; /* para alinear verticalmente */
+}
+
+.btn-base {
+    flex: 1;
+    padding: 12px 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #000;
+    background-color: #39FF14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-base.btn-comprar {
+    background-color: #1E90FF;
+    color: #fff;
+}
+
+.btn-base:hover.btn-añadir {
+    background-color: #1E90FF;
+    color: #fff;
+}
+
+.btn-base:hover.btn-comprar {
+    background-color: #39FF14;
+    color: #000;
+}
+
+
+#login-section {
+    background-color: #1E90FF; 
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+}
+#login-section input::placeholder {
+    color: #7FFF00; 
+}
+#login-btn {
+    background-color: #39FF14; 
+    color: #000000; 
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+#login-btn:hover {
+    background-color: #2EB82E;
+}
+#login-message {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.footer {
+    background-color: #000000;
+    color: #D3D3D3;
+    padding: 40px 20px 20px;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+.footer-section h4 {
+    color: #1E90FF;
+    margin-bottom: 15px;
+    font-family: 'Orbitron', sans-serif;
+}
+.footer-section ul li a {
+    color: #D3D3D3;
+    text-decoration: none;
+}
+.footer-section ul li a:hover {
+    color: #39FF14;
+    text-decoration: underline;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #555;
+}
+.redes-sociales a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    margin-right: 10px;
+    filter: brightness(70%);
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+.redes-sociales a:hover {
+    filter: brightness(100%);
+}
+/* Usa íconos de redes sociales con fondo (puedes usar imágenes o font icons) */
+.icon-facebook { background-image: url('images/facebook.png'); }
+.icon-instagram { background-image: url('images/instagram.png'); }
+.icon-twitter { background-image: url('images/xtwitter.png'); }
